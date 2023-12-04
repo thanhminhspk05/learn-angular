@@ -25,4 +25,8 @@ export class ProductListComponent {
       ? `Only ${this.product.inStock} items left`
       : "Not in Stock";
   }
+
+  onNameChange(event: any) {
+    this.name = event?.target?.value;
+  }
 }

@@ -7,6 +7,7 @@
   {{ getProductStock() }}
 </p>
 <button bind-disabled="!(product.inStock > 0)">Buy</button>
-<input [value]="name" />
+<input [value]="name" (input)="onNameChange($event)" />
+<p>{{ name }}</p>
 
 <!-- Disabled, Hidden, Checked only using property binding -->
