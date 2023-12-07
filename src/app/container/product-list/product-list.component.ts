@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "product-list",
@@ -598,6 +598,8 @@ export class ProductListComponent {
       slug: "michael-feburary-sk8-hi",
     },
   ];
+
+  @Input() searchText: string = "";
 
   totalProduct = this.products.length;
   totalInStock = this.products.filter((item) => item.is_in_inventory).length;
