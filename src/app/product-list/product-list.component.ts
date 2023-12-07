@@ -1,32 +1,42 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "product-list",
-  templateUrl: "./product-list.component.html",
-  styleUrls: ["./product-list.component.css"],
+  selector: 'product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  name = "John Doe";
+  //name="John Smith";
+  addToCart:number = 0;
   product = {
-    name: "iPhone 13",
-    price: 999,
-    color: "Red",
+    name: 'iPhone X',
+    price: 789,
+    color: 'Black',
     discount: 8.5,
-    inStock: 0,
-    pImage: "/assets/images/iPhone.jpg",
-  };
+    inStock: 10,
+    pImage: '/assets/images/iphone.png'
+  }
 
   getDiscountedPrice() {
-    return this.product.price * (1 - this.product.discount / 100);
+    return this.product.price - (this.product.price * this.product.discount / 100)
   }
 
-  getProductStock() {
-    return this.product.inStock > 0
-      ? `Only ${this.product.inStock} items left`
-      : "Not in Stock";
+  onNameChange(event: any){
+    //this.name = event.target.value;
+    //console.log(event.target.value);
   }
 
-  onNameChange(event: any) {
-    this.name = event?.target?.value;
+  decrementCartValue(){
+    if(this.addToCart > 0){
+      this.addToCart--;
+    }
+    
+  }
+
+  incrementCartValue(){
+    if(this.addToCart < this.product.inStock){
+      this.addToCart++;
+    }
+    
   }
 }
