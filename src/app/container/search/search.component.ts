@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.css"],
 })
 export class SearchComponent {
-  searchText: string = 'Womens watch';
+  searchText: string = "";
 
-  updateSearchText(event: any){
-      this.searchText = event.target.value;
+  updateSearchText(event: any) {
+    this.searchText = event.target.value;
   }
 }
