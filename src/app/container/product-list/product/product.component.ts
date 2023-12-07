@@ -23,5 +23,5 @@ type TProduct = {
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent {
-  @Input() prod = {} as TProduct;
+  @Input() product = {} as TProduct;
 }
