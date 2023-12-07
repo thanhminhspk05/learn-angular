@@ -603,8 +603,17 @@ export class ProductListComponent {
   totalInStock = this.products.filter((item) => item.is_in_inventory).length;
   totalOutOfStock = this.totalProduct - this.totalInStock;
 
+  // Shallow copy
+  productFiltered = this.products.map((item) => ({ ...item }));
+
   // STEP 3: declare function in parent, example setValue
   onFilterChange(eventData: string) {
-    console.log("onFilterChange", eventData);
+    if (eventData == "all") {
+      this.productFiltered = this.products;
+    } else {
+      this.productFiltered = this.products.filter(
+        (item) => String(item.is_in_inventory) === eventData
+      );
+    }
   }
 }
