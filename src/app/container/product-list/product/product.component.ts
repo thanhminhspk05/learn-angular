@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-type TProduct = {
+interface IProduct {
   id: number;
   name: string;
   description: string;
@@ -15,7 +15,7 @@ type TProduct = {
   items_left: number;
   imageURL: string;
   slug: string;
-};
+}
 
 @Component({
   selector: "app-product",
@@ -23,5 +23,5 @@ type TProduct = {
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent {
-  @Input() product = {} as TProduct;
+  @Input() product: IProduct;
 }
