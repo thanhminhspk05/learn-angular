@@ -10,8 +10,12 @@
 ></app-filter>
 
 <div class="ekart--products--container">
-  <app-product
-    *ngFor="let product of productFiltered"
-    [product]="product"
-  ></app-product>
+  <div *ngFor="let product of products">
+    <app-product
+      [product]="product"
+      *ngIf="
+        searchText === '' || product.name.toLowerCase().includes(searchText)
+      "
+    ></app-product>
+  </div>
 </div>
