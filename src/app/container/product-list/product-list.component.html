@@ -2,6 +2,7 @@
   [all]="totalProduct"
   [inStock]="totalInStock"
   [outOfStock]="totalOutOfStock"
+  (onSelectedRadioButtonChange)="onFilterChange()"
 ></app-filter>
 <div class="ekart--products--container">
   <app-product

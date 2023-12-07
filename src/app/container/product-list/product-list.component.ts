@@ -602,4 +602,8 @@ export class ProductListComponent {
   totalProduct = this.products.length;
   totalInStock = this.products.filter((item) => item.is_in_inventory).length;
   totalOutOfStock = this.totalProduct - this.totalInStock;
+
+  onFilterChange() {
+    console.log("onFilterChange");
+  }
 }
