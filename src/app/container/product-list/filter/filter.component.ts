@@ -15,9 +15,9 @@ export class FilterComponent {
   @Input()
   outOfStock: number = 0;
 
+  // STEP 1: emit value to "selectedRadioButtonChange" every value change
   @Output()
   selectedRadioButtonChange: EventEmitter<string> = new EventEmitter<string>();
-
   selectedRadioButton = "all";
 
   onSelectedRadioButtonChange() {

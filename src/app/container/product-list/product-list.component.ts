@@ -603,7 +603,8 @@ export class ProductListComponent {
   totalInStock = this.products.filter((item) => item.is_in_inventory).length;
   totalOutOfStock = this.totalProduct - this.totalInStock;
 
-  onFilterChange() {
-    console.log("onFilterChange");
+  // STEP 3: declare function in parent, example setValue
+  onFilterChange(eventData: string) {
+    console.log("onFilterChange", eventData);
   }
 }
