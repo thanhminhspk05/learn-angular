@@ -1,21 +1,5 @@
 import { Component, Input } from "@angular/core";
-
-interface IProduct {
-  id: number;
-  name: string;
-  description: string;
-  brand: string;
-  gender: string;
-  category: string;
-  size: number[];
-  color: string[];
-  price: number;
-  discountPrice?: number;
-  is_in_inventory: boolean;
-  items_left: number;
-  imageURL: string;
-  slug: string;
-}
+import { Product } from "src/app/Models/Product";
 
 @Component({
   selector: "app-product",
@@ -23,5 +7,5 @@ interface IProduct {
   styleUrls: ["./product.component.css"],
 })
 export class ProductComponent {
-  @Input() product: IProduct;
+  @Input() product: Product;
 }
