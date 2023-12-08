@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Product } from "src/app/Models/Product";
 
 @Component({
@@ -612,5 +612,13 @@ export class ProductListComponent {
   // STEP 3: declare function in parent, example setValue
   onFilterChange(eventData: string) {
     this.selectedRadioButton = eventData;
+  }
+
+  @Output()
+  selectedProductEmiter: EventEmitter<Product> = new EventEmitter<Product>();
+
+  setSelectedProduct(value: Product) {
+    console.log("setSelectedProduct", value);
+    this.selectedProductEmiter.emit(value);
   }
 }
