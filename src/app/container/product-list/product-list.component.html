@@ -2,15 +2,18 @@
   (selectedRadioButtonChange) :  Emitter from child
   onFilterChange($event): function parent excute
 -->
-<app-filter
+<!-- <app-filter
   [all]="totalProduct"
   [inStock]="totalInStock"
   [outOfStock]="totalOutOfStock"
   (selectedRadioButtonChange)="onFilterChange($event)"
-></app-filter>
+></app-filter> -->
 
 <div class="ekart--products--container">
-  <div *ngFor="let product of products" (click)="selectedProduct = product; setSelectedProduct(selectedProduct)">
+  <div
+    *ngFor="let product of products"
+    (click)="selectedProduct = product; setSelectedProduct(selectedProduct)"
+  >
     <app-product
       [product]="product"
       *ngIf="
