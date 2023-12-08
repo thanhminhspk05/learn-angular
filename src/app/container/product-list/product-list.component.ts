@@ -618,7 +618,6 @@ export class ProductListComponent {
   selectedProductEmiter: EventEmitter<Product> = new EventEmitter<Product>();
 
   setSelectedProduct(value: Product) {
-    console.log("setSelectedProduct", value);
     this.selectedProductEmiter.emit(value);
   }
 }

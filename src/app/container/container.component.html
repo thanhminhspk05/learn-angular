@@ -1,6 +1,9 @@
 <div class="ekart--product--container">
   <app-search (searchTextEmiter)="onChangeSearchText($event)"></app-search>
-  <product-list [searchText]="searchText"></product-list>
+  <product-list
+    [searchText]="searchText"
+    (selectedProductEmiter)="getSelectedProductValue($event)"
+  ></product-list>
   <product-detail *ngIf=""></product-detail>
 </div>
 
