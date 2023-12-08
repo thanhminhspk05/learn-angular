@@ -4,7 +4,10 @@
     [searchText]="searchText"
     (selectedProductEmiter)="getSelectedProductValue($event)"
   ></product-list>
-  <product-detail *ngIf=""></product-detail>
+  <product-detail
+    *ngIf="selectedProduct"
+    [product]="selectedProduct"
+  ></product-detail>
 </div>
 
 <!--Disabled, Hidden, Checked-->
